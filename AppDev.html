@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloomora | Luxury Flower Delivery Worldwide</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d4968d">
+<style>
+:root {
+  --primary-rose: #d4968d;
+  --secondary-sage: #9caf88;
+  --cream: #e5d0bf;
+  --dark: #222222;
+  --white: #eed9d9;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6;}
+
+/* HEADER */
+header{background:#d4968d;padding:1rem 3rem;box-shadow:var(--shadow-soft);position:sticky;top:0;z-index:10;}
+nav{display:flex;justify-content:space-between;align-items:center;}
+.logo{font-weight:600;font-size:1.4rem;}
+nav ul{list-style:none;display:flex;gap:2rem;}
+nav a{text-decoration:none;color:var(--dark);font-size:.9rem;transition:.3s;padding:.5rem 1rem;border-radius:8px;}
+nav a:hover{background:var(--cream);color:var(--primary-rose);transform:translateY(-2px);}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr;align-items:center;padding:4rem 6rem;gap:4rem;}
+.hero-text h1{font-size:3rem;font-weight:600;}
+.hero-text p{margin:1rem 0 2rem;max-width:420px;}
+.hero-text button{padding:.9rem 2rem;border-radius:40px;border:none;background:var(--primary-rose);color:#fff;cursor:pointer;transition:.3s;  width: fit-content;
+  align-self: flex-start;}
+.hero-text button:hover{transform:translateY(-3px);}
+.hero-image img{width:100%;border-radius:24px;box-shadow:var(--shadow-soft);}
+
+.hero-text{
+  position: relative;
+  background:
+    linear-gradient(rgba(158, 134, 115, 0.85), rgba(253,248,244,0.85)),
+    url("https://images.unsplash.com/photo-1490750967868-88aa4486c946");
+  background-size: cover;
+  background-position: center;
+
+  padding: 4rem;
+  border-radius: 24px;
+
+  /* 🔑 THIS IS THE KEY */
+  height: 100%;
+  min-height: 90vh;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height:60vh;   
+  max-width:1400px;
+}
+
+
+/* SECTION HEADER */
+.section-header{text-align:center;margin-bottom:3rem;}
+.section-header h2{font-size:2.2rem;}
+.section-header h2::after{content:'';width:60px;height:2px;background:var(--primary-rose);display:block;margin:1rem auto 0;}
+.section-header p{font-size:.9rem;color:#666;}
+
+/* OCCASIONS */
+.occasions{padding:5rem 4rem;}
+.occasion-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;}
+.occasion-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-soft);transition:.4s;}
+.occasion-card:hover{transform:translateY(-10px);}
+.occasion-image img{width:100%;height:220px;object-fit:cover;}
+.occasion-info p{
+  font-size:0.85rem;
+  color:#666;
+  margin-top:0.5rem;
+  line-height:1.4;
+}
+
+
+/* DELIVERY */
+.delivery{padding:5rem 4rem;}
+.map-wrapper{display:grid;grid-template-columns:2fr 1fr;gap:3rem;}
+.map-container{position:relative;background:#fff;border-radius:24px;padding:2rem;box-shadow:var(--shadow-soft);}
+.global-badge{position:absolute;top:20px;right:20px;background:#fff;padding:.6rem 1.2rem;border-radius:30px;font-size:.8rem;box-shadow:var(--shadow-soft);}
+
+.map-pin{position:absolute;width:14px;height:14px;background:var(--primary-rose);border-radius:50%;box-shadow:0 0 0 6px rgba(212,150,141,.25);animation:pulse 2.5s infinite;}
+.pin-us{top:45%;left:22%;}
+.pin-uk{top:32%;left:45%;}
+.pin-in{top:55%;left:60%;}
+.pin-au{top:70%;left:75%;}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(212,150,141,.4);}
+  70%{box-shadow:0 0 0 14px rgba(212,150,141,0);}
+  100%{box-shadow:0 0 0 0 rgba(212,150,141,0);}
+}
+
+.country-list{display:flex;flex-direction:column;gap:1rem;}
+.country-card{background:#fff;padding:1rem;border-radius:14px;box-shadow:var(--shadow-soft);display:flex;align-items:center;gap:1rem;transition:.3s;}
+.country-card:hover{transform:translateX(8px);}
+.country-outline{width:46px;opacity:.85;}
+
+/* ✅ CONTACT SECTION (NEW ADDITION) */
+.contact{padding:5rem 4rem;background:#fff;}
+.contact-wrapper{
+  max-width:900px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+}
+
+.contact-info h3{font-size:1.6rem;margin-bottom:1rem;}
+.contact-info p{font-size:.9rem;color:#555;margin-bottom:.8rem;}
+
+.contact-form{
+  background:var(--cream);
+  padding:2rem;
+  border-radius:20px;
+  box-shadow:var(--shadow-soft);
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:.8rem 1rem;
+  margin-bottom:1rem;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-family:'Poppins',sans-serif;
+}
+
+.contact-form button{
+  width:100%;
+  padding:.9rem;
+  border:none;
+  border-radius:30px;
+  background:var(--primary-rose);
+  color:#fff;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.contact-form button:hover{
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8rem;}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:3rem 2rem;}
+  .map-wrapper,.contact-wrapper{grid-template-columns:1fr;}
+}
+.map-container{
+  background:
+    url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"),
+    #fff;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="Logo"><h2>Malareey</h2></div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#occasions">Occasions</a></li>
+<li><a href="#delivery">Delivery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<div class="hero-text">
+<h1>Every Flower Tells a Feeling <div>To Express What Words Cannot</h1>
+<p>Curated floral experiences crafted by expert florists.</p>
+<button>Explore Collection</button>
+</div>
+</section>
+
+<section id="occasions" class="occasions">
+<div class="section-header">
+<h2>Flowers for Every Occasion</h2>
+<p>Designed to express every emotion</p>
+</div>
+<div class="occasion-grid">
+<div class="occasion-card"><div class="occasion-image"><img src="App_Dev_img1.jpg"></div><div class="occasion-info"><h3>Proposal</h3><div><span class="tooltip">
+    Soft roses and tulips symbolizing love, passion, and intimacy.
+  </span></div></div></div>
+<div class="occasion-card"><div class="occasion-image"><img src="App_Dev_img3.jpg">
+</div><div class="occasion-info"><h3>Celebration</h3><div><span class="tooltip">Bright lilies and orchids to celebrate joy, success, and milestones.</span></div></div></div>
+<div class="occasion-card"><div class="occasion-image"><img src="App_Dev_img4.webp"></div><div class="occasion-info"><h3>Sympathy</h3><div><span class="tooltip">White lilies and chrysanthemums offering peace and remembrance.</span></div></div></div>
+<div class="occasion-card"><div class="occasion-image"><img src="App_Dev_img5.webp"></div><div class="occasion-info"><h3>Gratitude</h3><div><span class="tooltip">Sunflowers and pastel blooms expressing appreciation and warmth.</span></div></div></div>
+</div>
+</section>
+
+<section id="delivery" class="delivery">
+<div class="section-header">
+<h2>Worldwide Flower Delivery</h2>
+<p>Trusted global floral network</p>
+</div>
+<div class="map-wrapper">
+<div class="map-container">
+<div class="global-badge">🌍 195+ Countries</div>
+<div class="map-pin pin-us"></div>
+<div class="map-pin pin-uk"></div>
+<div class="map-pin pin-in"></div>
+<div class="map-pin pin-au"></div>
+</div>
+<div class="country-list">
+<div class="country-card"><img src="https://flagcdn.com/w40/us.png">United States</div>
+<div class="country-card"><img src="https://flagcdn.com/w40/gb.png">United Kingdom</div>
+<div class="country-card"><img src="https://flagcdn.com/w40/in.png">India</div>
+<div class="country-card"><img src="https://flagcdn.com/w40/au.png">Australia</div>
+</div>
+</div>
+</section>
+
+<!-- ✅ CONTACT SECTION -->
+<section id="contact" class="contact">
+<div class="section-header">
+<h2>Contact Our Florists</h2>
+<p>We’d love to create something beautiful for you</p>
+</div>
+
+<div class="contact-wrapper">
+<div class="contact-info">
+<h3>Get in Touch</h3>
+<p>📍 Global Floral Studios</p>
+<p>📧 support@bloomora.com</p>
+<p>📞 +91 98765 43210</p>
+</div>
+
+<form class="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Bloomora. Luxury Flower Delivery Worldwide.</p>
+</footer>
+
+</body>
+</html>
