@@ -1,0 +1,8 @@
+{
+  "name": "Bloomora",
+  "short_name": "Bloomora",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6b8e23"
+}
