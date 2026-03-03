@@ -328,6 +328,9 @@ footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8
 <li><a href="#occasions">Occasions</a></li>
 <li><a href="#delivery">Delivery</a></li>
 <li><a href="#contact">Contact</a></li>
+  <li>
+  <a href="#" id="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+</li>
 <li><button id="install-btn">📱 Install App</button></li>
 </ul>
 </nav>
@@ -369,6 +372,12 @@ footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8
 <div class="occasion-card">
 <div class="occasion-image"><img src="App_Dev_img1.jpg" alt="Proposal" loading="lazy"></div>
 <div class="occasion-info">
+  <button class="add-to-cart"
+  data-id="proposal"
+  data-name="Proposal Bouquet"
+  data-price="1999">
+  Add to Cart
+</button>
 <h3>Proposal</h3>
 <p>Soft roses and tulips symbolizing love, passion, and intimacy.</p>
 </div>
@@ -376,6 +385,12 @@ footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8
 <div class="occasion-card">
 <div class="occasion-image"><img src="App_Dev_img3.jpg" alt="Celebration" loading="lazy"></div>
 <div class="occasion-info">
+  <button class="add-to-cart"
+  data-id="proposal"
+  data-name="Proposal Bouquet"
+  data-price="1999">
+  Add to Cart
+</button>
 <h3>Celebration</h3>
 <p>Bright lilies and orchids to celebrate joy, success, and milestones.</p>
 </div>
@@ -383,6 +398,12 @@ footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8
 <div class="occasion-card">
 <div class="occasion-image"><img src="App_Dev_img4.webp" alt="Sympathy" loading="lazy"></div>
 <div class="occasion-info">
+  <button class="add-to-cart"
+  data-id="proposal"
+  data-name="Proposal Bouquet"
+  data-price="1999">
+  Add to Cart
+</button>
 <h3>Sympathy</h3>
 <p>White lilies and chrysanthemums offering peace and remembrance.</p>
 </div>
@@ -390,6 +411,12 @@ footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8
 <div class="occasion-card">
 <div class="occasion-image"><img src="App_Dev_img5.webp" alt="Gratitude" loading="lazy"></div>
 <div class="occasion-info">
+  <button class="add-to-cart"
+  data-id="proposal"
+  data-name="Proposal Bouquet"
+  data-price="1999">
+  Add to Cart
+</button>
 <h3>Gratitude</h3>
 <p>Sunflowers and pastel blooms expressing appreciation and warmth.</p>
 </div>
@@ -444,6 +471,18 @@ footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8
 </form>
 </div>
 </section>
+  <section id="cart" class="contact">
+  <div class="section-header">
+    <h2>Your Cart</h2>
+    <p>Review your selected bouquets</p>
+  </div>
+
+  <div id="cart-items"></div>
+
+  <div style="text-align:center; margin-top:2rem;">
+    <button id="checkout-btn">Checkout</button>
+  </div>
+</section>
 
 <footer>
 <p>© 2026 Malareey. Luxury Flower Delivery Worldwide.</p>
@@ -452,3 +491,4 @@ footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8
 <script src="app.js"></script>
 </body>
 </html>
+
