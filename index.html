@@ -3,30 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Malareey | Luxury Flower Delivery Worldwide</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.json">
-<link rel="canonical" href="https://malareey.com">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌸</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23d4968d' width='180' height='180'/><text x='50%' y='50%' font-size='90' fill='white' text-anchor='middle' dominant-baseline='central'>🌸</text></svg>">
 <meta name="theme-color" content="#d4968d">
 <meta name="description" content="Luxury flower delivery worldwide. Curated floral experiences for every occasion.">
-<meta property="og:title" content="Malareey - Luxury Flower Delivery">
-<meta property="og:description" content="Send beautiful flowers worldwide">
-<meta property="og:type" content="website">
-
 <style>
 :root {
   --primary-rose: #d4968d;
   --secondary-sage: #9caf88;
   --cream: #e5d0bf;
   --dark: #222222;
-  --white: #eed9d9;
   --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
 }
-
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6;}
@@ -35,201 +25,43 @@ body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--dark);
 header{background:#d4968d;padding:1rem 3rem;box-shadow:var(--shadow-soft);position:sticky;top:0;z-index:10;}
 nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
 .logo{font-weight:600;font-size:1.4rem;}
-nav ul{list-style:none;display:flex;gap:2rem;align-items:center;flex-wrap:wrap;width:100%;}
-
+nav ul{list-style:none;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
 nav a{text-decoration:none;color:var(--dark);font-size:.9rem;transition:.3s;padding:.5rem 1rem;border-radius:8px;}
-nav a:hover{background:var(--cream);color:var(--primary-rose);transform:translateY(-2px);}
+nav a:hover{background:var(--cream);color:var(--primary-rose);}
 
-/* INSTALL BUTTON */
-#install-btn {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background: #fff;
-  color: var(--primary-rose);
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+/* CART NAV BUTTON */
+.cart-nav-btn{position:relative;background:#fff;border:none;border-radius:50px;padding:.5rem 1.2rem;font-weight:600;cursor:pointer;font-size:.9rem;display:flex;align-items:center;gap:.4rem;transition:all .3s;box-shadow:0 4px 12px rgba(0,0,0,0.15);color:var(--dark);font-family:'Poppins',sans-serif;}
+.cart-nav-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+#cart-count{background:var(--primary-rose);color:#fff;border-radius:50%;width:22px;height:22px;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;font-weight:700;transition:transform .25s;}
 
-#install-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  background: #f0f0f0;
-}
-
-#install-btn.show {
-  display: inline-block !important;
-}
+#install-btn{display:none;padding:.7rem 1.5rem;background:#fff;color:var(--primary-rose);border:none;border-radius:30px;font-weight:600;cursor:pointer;font-size:.9rem;box-shadow:0 4px 12px rgba(0,0,0,0.15);font-family:'Poppins',sans-serif;}
+#install-btn.show{display:inline-block;}
 
 /* INSTALL MODAL */
-.install-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease;
-}
+.install-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;justify-content:center;align-items:center;}
+.install-modal.show{display:flex;}
+.install-content{background:#fff;padding:2.5rem;border-radius:20px;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.install-icon{font-size:3rem;margin-bottom:1rem;}
+.install-content h3{font-size:1.6rem;margin-bottom:1rem;color:var(--primary-rose);}
+.install-content p{color:#666;margin-bottom:1.5rem;font-size:.95rem;}
+.install-buttons{display:flex;gap:1rem;}
+.install-btn-confirm,.install-btn-cancel{flex:1;padding:.9rem;border:none;border-radius:12px;cursor:pointer;font-weight:600;font-size:.95rem;font-family:'Poppins',sans-serif;}
+.install-btn-confirm{background:var(--primary-rose);color:#fff;}
+.install-btn-cancel{background:#f0f0f0;color:var(--dark);}
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.install-modal.show {
-  display: flex;
-}
-
-.install-content {
-  background: #fff;
-  padding: 2.5rem;
-  border-radius: 20px;
-  max-width: 420px;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  animation: slideUp 0.4s ease;
-}
-
-@keyframes slideUp {
-  from { 
-    transform: translateY(40px); 
-    opacity: 0; 
-  }
-  to { 
-    transform: translateY(0); 
-    opacity: 1; 
-  }
-}
-
-.install-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.install-content h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: var(--primary-rose);
-  font-weight: 600;
-}
-
-.install-content p {
-  color: #666;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.install-buttons {
-  display: flex;
-  gap: 1rem;
-}
-
-.install-btn-confirm, .install-btn-cancel {
-  flex: 1;
-  padding: 0.9rem 1.2rem;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-}
-
-.install-btn-confirm {
-  background: var(--primary-rose);
-  color: #fff;
-}
-
-.install-btn-confirm:hover {
-  background: #c07f75;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212,150,141,0.3);
-}
-
-.install-btn-cancel {
-  background: #f0f0f0;
-  color: var(--dark);
-}
-
-.install-btn-cancel:hover {
-  background: #e0e0e0;
-}
-
-/* OFFLINE INDICATOR */
-.offline-indicator {
-  display: none;
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  background: #ff6b6b;
-  color: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(255,107,107,0.3);
-  animation: slideIn 0.3s ease;
-  font-weight: 600;
-}
-
-.offline-indicator.show {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.offline-indicator-pulse {
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  border-radius: 50%;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes slideIn {
-  from { 
-    transform: translateX(400px); 
-    opacity: 0; 
-  }
-  to { 
-    transform: translateX(0); 
-    opacity: 1; 
-  }
-}
+/* OFFLINE */
+.offline-indicator{display:none;position:fixed;top:80px;right:20px;background:#ff6b6b;color:#fff;padding:1rem 1.5rem;border-radius:12px;z-index:999;font-weight:600;align-items:center;gap:.8rem;}
+.offline-indicator.show{display:flex;}
+.offline-indicator-pulse{width:8px;height:8px;background:#fff;border-radius:50%;animation:blink 1s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.5}}
 
 /* HERO */
-.hero{display:grid;grid-template-columns:1fr;align-items:center;padding:4rem 6rem;gap:4rem;}
+.hero{padding:4rem 6rem;}
+.hero-text{background:linear-gradient(rgba(158,134,115,0.85),rgba(253,248,244,0.85)),url("https://images.unsplash.com/photo-1490750967868-88aa4486c946");background-size:cover;background-position:center;padding:4rem;border-radius:24px;min-height:60vh;display:flex;flex-direction:column;justify-content:center;}
 .hero-text h1{font-size:3rem;font-weight:600;}
 .hero-text p{margin:1rem 0 2rem;max-width:420px;}
-.hero-text button{padding:.9rem 2rem;border-radius:40px;border:none;background:var(--primary-rose);color:#fff;cursor:pointer;transition:.3s;width:fit-content;align-self:flex-start;}
-.hero-text button:hover{transform:translateY(-3px);}
-
-.hero-text{
-  position:relative;
-  background:linear-gradient(rgba(158,134,115,0.85),rgba(253,248,244,0.85)),url("https://images.unsplash.com/photo-1490750967868-88aa4486c946");
-  background-size:cover;
-  background-position:center;
-  padding:4rem;
-  border-radius:24px;
-  min-height:60vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
+.hero-text .hero-btn{padding:.9rem 2rem;border-radius:40px;border:none;background:var(--primary-rose);color:#fff;cursor:pointer;transition:.3s;font-family:'Poppins',sans-serif;font-size:1rem;}
+.hero-text .hero-btn:hover{transform:translateY(-3px);}
 
 /* SECTION HEADER */
 .section-header{text-align:center;margin-bottom:3rem;}
@@ -242,213 +74,463 @@ nav a:hover{background:var(--cream);color:var(--primary-rose);transform:translat
 .occasion-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;}
 .occasion-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-soft);transition:.4s;}
 .occasion-card:hover{transform:translateY(-10px);}
-.occasion-image{width:100%;height:220px;background:#f0f0f0;overflow:hidden;}
+.occasion-image{width:100%;height:220px;overflow:hidden;background:#f0f0f0;}
 .occasion-image img{width:100%;height:100%;object-fit:cover;display:block;}
-.occasion-info p{font-size:0.85rem;color:#666;margin-top:0.5rem;line-height:1.4;}
+.occasion-info{padding:1.2rem;}
+.occasion-info h3{font-size:1.1rem;font-weight:600;}
+.occasion-info p{font-size:.85rem;color:#666;margin-top:.5rem;line-height:1.4;}
+.occasion-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:.8rem;border-top:1px solid #f0e8e8;}
+.occasion-price{font-weight:700;color:var(--primary-rose);font-size:1.05rem;}
+
+/* ADD TO CART BUTTON */
+.add-to-cart-btn{background:var(--primary-rose);color:#fff;border:none;border-radius:30px;padding:.5rem 1.1rem;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Poppins',sans-serif;}
+.add-to-cart-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(212,150,141,0.4);}
+
+/* CART SIDEBAR */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:900;opacity:0;pointer-events:none;transition:opacity .35s;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-sidebar{position:fixed;top:0;right:0;width:400px;max-width:100vw;height:100vh;background:#fff;z-index:1001;box-shadow:-10px 0 50px rgba(0,0,0,0.15);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);}
+.cart-sidebar.open{transform:translateX(0);}
+.cart-header{background:var(--primary-rose);color:#fff;padding:1.5rem 1.8rem;display:flex;align-items:center;justify-content:space-between;}
+.cart-header h2{font-size:1.3rem;font-weight:600;}
+.cart-close-btn{background:rgba(255,255,255,.2);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.cart-close-btn:hover{background:rgba(255,255,255,.35);}
+.cart-body{flex:1;overflow-y:auto;padding:1.5rem;}
+.cart-empty{text-align:center;padding:3rem 1rem;color:#aaa;}
+.cart-empty-icon{font-size:3.5rem;margin-bottom:1rem;}
+.cart-item{display:flex;align-items:center;gap:1rem;background:var(--cream);border-radius:14px;padding:1rem;margin-bottom:1rem;}
+.cart-item-img{width:64px;height:64px;border-radius:10px;background:#e0e0e0;flex-shrink:0;font-size:2rem;display:flex;align-items:center;justify-content:center;}
+.cart-item-details{flex:1;}
+.cart-item-name{font-weight:600;font-size:.95rem;}
+.cart-item-price{color:var(--primary-rose);font-weight:700;font-size:.9rem;margin-top:2px;}
+.cart-item-controls{display:flex;align-items:center;gap:.5rem;margin-top:.5rem;}
+.qty-btn{width:28px;height:28px;border-radius:50%;border:2px solid var(--primary-rose);background:#fff;color:var(--primary-rose);font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1;}
+.qty-btn:hover{background:var(--primary-rose);color:#fff;}
+.qty-display{font-weight:600;font-size:.95rem;min-width:20px;text-align:center;}
+.cart-item-remove{background:none;border:none;color:#ccc;font-size:1.1rem;cursor:pointer;padding:.3rem;transition:color .2s;align-self:flex-start;}
+.cart-item-remove:hover{color:#e74c3c;}
+.cart-footer{padding:1.5rem;border-top:1px solid #f0e8e8;}
+.cart-subtotal{display:flex;justify-content:space-between;font-size:.9rem;color:#888;margin-bottom:.5rem;}
+.cart-total{display:flex;justify-content:space-between;font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;}
+.cart-total span:last-child{color:var(--primary-rose);}
+.checkout-btn{width:100%;padding:1rem;background:var(--primary-rose);color:#fff;border:none;border-radius:30px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Poppins',sans-serif;}
+.checkout-btn:hover{background:#c07f75;transform:translateY(-2px);}
+.continue-shopping{width:100%;margin-top:.8rem;padding:.7rem;background:none;border:2px solid var(--primary-rose);border-radius:30px;color:var(--primary-rose);font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Poppins',sans-serif;}
+.continue-shopping:hover{background:var(--primary-rose);color:#fff;}
+
+/* TOAST */
+.cart-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--dark);color:#fff;padding:.8rem 1.8rem;border-radius:30px;font-size:.9rem;font-weight:600;z-index:2000;transition:transform .4s cubic-bezier(.4,0,.2,1);pointer-events:none;white-space:nowrap;}
+.cart-toast.show{transform:translateX(-50%) translateY(0);}
+
+/* CHECKOUT MODAL */
+.checkout-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:2000;justify-content:center;align-items:center;}
+.checkout-modal.show{display:flex;}
+.checkout-content{background:#fff;border-radius:20px;padding:2.5rem;max-width:440px;width:90%;text-align:center;}
+.checkout-content h3{color:var(--primary-rose);font-size:1.5rem;margin-bottom:1rem;}
+.checkout-content p{color:#555;font-size:.95rem;margin-bottom:1.5rem;}
+.checkout-content button{background:var(--primary-rose);color:#fff;border:none;border-radius:30px;padding:.8rem 2rem;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;font-size:.95rem;}
 
 /* DELIVERY */
 .delivery{padding:5rem 4rem;}
 .map-wrapper{display:grid;grid-template-columns:2fr 1fr;gap:3rem;}
-.map-container{position:relative;background:#fff;border-radius:24px;padding:2rem;box-shadow:var(--shadow-soft);min-height:400px;}
+.map-container{position:relative;background:url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg") center/contain no-repeat,#fff;border-radius:24px;padding:2rem;box-shadow:var(--shadow-soft);min-height:400px;}
 .global-badge{position:absolute;top:20px;right:20px;background:#fff;padding:.6rem 1.2rem;border-radius:30px;font-size:.8rem;box-shadow:var(--shadow-soft);}
-
-.map-pin{position:absolute;width:14px;height:14px;background:var(--primary-rose);border-radius:50%;box-shadow:0 0 0 6px rgba(212,150,141,.25);animation:pulse 2.5s infinite;}
-.pin-us{top:45%;left:22%;}
-.pin-uk{top:32%;left:45%;}
-.pin-in{top:55%;left:60%;}
-.pin-au{top:70%;left:75%;}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(212,150,141,.4);}
-  70%{box-shadow:0 0 0 14px rgba(212,150,141,0);}
-  100%{box-shadow:0 0 0 0 rgba(212,150,141,0);}
-}
-
+.map-pin{position:absolute;width:14px;height:14px;background:var(--primary-rose);border-radius:50%;animation:pulse 2.5s infinite;}
+.pin-us{top:45%;left:22%}.pin-uk{top:32%;left:45%}.pin-in{top:55%;left:60%}.pin-au{top:70%;left:75%}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,150,141,.4)}70%{box-shadow:0 0 0 14px rgba(212,150,141,0)}100%{box-shadow:0 0 0 0 rgba(212,150,141,0)}}
 .country-list{display:flex;flex-direction:column;gap:1rem;}
 .country-card{background:#fff;padding:1rem;border-radius:14px;box-shadow:var(--shadow-soft);display:flex;align-items:center;gap:1rem;transition:.3s;}
 .country-card:hover{transform:translateX(8px);}
-.country-card img{width:40px;height:auto;}
+.country-card img{width:40px;}
 
-/* CONTACT SECTION */
+/* CONTACT */
 .contact{padding:5rem 4rem;background:#fff;}
 .contact-wrapper{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
 .contact-info h3{font-size:1.6rem;margin-bottom:1rem;}
 .contact-info p{font-size:.9rem;color:#555;margin-bottom:.8rem;}
-
 .contact-form{background:var(--cream);padding:2rem;border-radius:20px;box-shadow:var(--shadow-soft);}
 .contact-form input,.contact-form textarea{width:100%;padding:.8rem 1rem;margin-bottom:1rem;border-radius:12px;border:1px solid #ddd;font-family:'Poppins',sans-serif;transition:.3s;}
-.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--primary-rose);box-shadow:0 0 0 3px rgba(212,150,141,0.1);}
-.contact-form button{width:100%;padding:.9rem;border:none;border-radius:30px;background:var(--primary-rose);color:#fff;cursor:pointer;transition:.3s;font-weight:600;}
-.contact-form button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,150,141,0.3);}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--primary-rose);}
+.contact-form button{width:100%;padding:.9rem;border:none;border-radius:30px;background:var(--primary-rose);color:#fff;cursor:pointer;font-weight:600;font-family:'Poppins',sans-serif;}
+.form-status{padding:1rem;margin-bottom:1rem;border-radius:12px;text-align:center;display:none;font-weight:600;}
+.form-status.success{background:#d4edda;color:#155724;display:block;}
+.form-status.error{background:#f8d7da;color:#721c24;display:block;}
 
-.form-status {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 12px;
-  text-align: center;
-  display: none;
-  font-weight: 600;
-}
-
-.form-status.success {
-  background: #d4edda;
-  color: #155724;
-  display: block;
-}
-
-.form-status.error {
-  background: #f8d7da;
-  color: #721c24;
-  display: block;
-}
-
-/* FOOTER */
 footer{background:#1f1f1f;color:#ccc;padding:3rem;text-align:center;font-size:.8rem;}
 
-.map-container{background:url("https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"),#fff;background-size:contain;background-repeat:no-repeat;background-position:center;}
-
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;padding:3rem 2rem;}
+  .hero{padding:3rem 2rem;}
   .map-wrapper,.contact-wrapper{grid-template-columns:1fr;}
-  nav ul{gap:1rem;}
-  #install-btn{padding:0.6rem 1rem;font-size:0.8rem;}
-  header{padding:1rem 1.5rem;}
   .occasions,.delivery,.contact{padding:3rem 2rem;}
+  header{padding:1rem 1.5rem;}
+  nav ul{gap:.8rem;}
+  .cart-sidebar{width:100vw;}
 }
 </style>
 </head>
-
 <body>
 
 <header>
 <nav>
-<div class="logo"><h2>🌸 Malareey</h2></div>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#occasions">Occasions</a></li>
-<li><a href="#delivery">Delivery</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><button id="install-btn">📱 Install App</button></li>
-</ul>
+  <div class="logo"><h2>🌸 Malareey</h2></div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#occasions">Occasions</a></li>
+    <li><a href="#delivery">Delivery</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <button class="cart-nav-btn" id="cart-toggle-btn">
+        🛒 Cart <span id="cart-count">0</span>
+      </button>
+    </li>
+    <li><button id="install-btn">📱 Install App</button></li>
+  </ul>
 </nav>
 </header>
 
 <!-- INSTALL MODAL -->
 <div id="install-modal" class="install-modal">
-<div class="install-content">
-<div class="install-icon">📱</div>
-<h3>Install Malareey</h3>
-<p>Add Malareey to your home screen for quick access and enjoy the app offline!</p>
-<div class="install-buttons">
-<button class="install-btn-confirm" id="confirm-install">Install</button>
-<button class="install-btn-cancel" id="cancel-install">Not Now</button>
-</div>
-</div>
+  <div class="install-content">
+    <div class="install-icon">📱</div>
+    <h3>Install Malareey</h3>
+    <p>Add Malareey to your home screen for quick access and enjoy the app offline!</p>
+    <div class="install-buttons">
+      <button class="install-btn-confirm" id="confirm-install">Install</button>
+      <button class="install-btn-cancel" id="cancel-install">Not Now</button>
+    </div>
+  </div>
 </div>
 
 <!-- OFFLINE INDICATOR -->
 <div id="offline-indicator" class="offline-indicator">
-<div class="offline-indicator-pulse"></div>
-<span>🔴 You're offline - App works in offline mode</span>
+  <div class="offline-indicator-pulse"></div>
+  <span>🔴 You're offline</span>
 </div>
 
+<!-- CART OVERLAY + SIDEBAR -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h2>🛒 Your Cart</h2>
+    <button class="cart-close-btn" id="cart-close-btn">✕</button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-empty" id="cart-empty">
+      <div class="cart-empty-icon">🌸</div>
+      <p>Your cart is empty.<br>Add some beautiful flowers!</p>
+    </div>
+    <div id="cart-items-list"></div>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none;">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cart-subtotal-val">₹0</span></div>
+    <div class="cart-subtotal"><span>Delivery</span><span>Free 🌍</span></div>
+    <div class="cart-total"><span>Total</span><span id="cart-total-val">₹0</span></div>
+    <button class="checkout-btn" id="checkout-btn">Proceed to Checkout →</button>
+    <button class="continue-shopping" id="continue-shopping-btn">Continue Shopping</button>
+  </div>
+</aside>
+
+<!-- TOAST -->
+<div class="cart-toast" id="cart-toast"></div>
+
+<!-- CHECKOUT MODAL -->
+<div class="checkout-modal" id="checkout-modal">
+  <div class="checkout-content">
+    <div style="font-size:3rem;margin-bottom:1rem;">🎉</div>
+    <h3>Order Placed!</h3>
+    <p id="checkout-summary-text">Thank you! Your flowers will be delivered soon.</p>
+    <button id="checkout-close-btn">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- HERO -->
 <section id="home" class="hero">
-<div class="hero-text">
-<h1>Every Flower Tells a Feeling<br>To Express What Words Cannot</h1>
-<p>Curated floral experiences crafted by expert florists.</p>
-<button>Explore Collection</button>
-</div>
+  <div class="hero-text">
+    <h1>Every Flower Tells a Feeling<br>To Express What Words Cannot</h1>
+    <p>Curated floral experiences crafted by expert florists.</p>
+    <button class="hero-btn" onclick="document.getElementById('occasions').scrollIntoView({behavior:'smooth'})">Explore Collection</button>
+  </div>
 </section>
 
+<!-- OCCASIONS -->
 <section id="occasions" class="occasions">
-<div class="section-header">
-<h2>Flowers for Every Occasion</h2>
-<p>Designed to express every emotion</p>
-</div>
-<div class="occasion-grid">
-<div class="occasion-card">
-<div class="occasion-image"><img src="App_Dev_img1.jpg" alt="Proposal" loading="lazy"></div>
-<div class="occasion-info">
-<h3>Proposal</h3>
-<p>Soft roses and tulips symbolizing love, passion, and intimacy.</p>
-</div>
-</div>
-<div class="occasion-card">
-<div class="occasion-image"><img src="App_Dev_img3.jpg" alt="Celebration" loading="lazy"></div>
-<div class="occasion-info">
-<h3>Celebration</h3>
-<p>Bright lilies and orchids to celebrate joy, success, and milestones.</p>
-</div>
-</div>
-<div class="occasion-card">
-<div class="occasion-image"><img src="App_Dev_img4.webp" alt="Sympathy" loading="lazy"></div>
-<div class="occasion-info">
-<h3>Sympathy</h3>
-<p>White lilies and chrysanthemums offering peace and remembrance.</p>
-</div>
-</div>
-<div class="occasion-card">
-<div class="occasion-image"><img src="App_Dev_img5.webp" alt="Gratitude" loading="lazy"></div>
-<div class="occasion-info">
-<h3>Gratitude</h3>
-<p>Sunflowers and pastel blooms expressing appreciation and warmth.</p>
-</div>
-</div>
-</div>
+  <div class="section-header">
+    <h2>Flowers for Every Occasion</h2>
+    <p>Designed to express every emotion</p>
+  </div>
+  <div class="occasion-grid">
+
+    <div class="occasion-card">
+      <div class="occasion-image"><img src="App_Dev_img1.jpg" alt="Proposal" loading="lazy"></div>
+      <div class="occasion-info">
+        <h3>Proposal</h3>
+        <p>Soft roses and tulips symbolizing love, passion, and intimacy.</p>
+        <div class="occasion-footer">
+          <span class="occasion-price">₹1,299</span>
+          <button class="add-to-cart-btn" data-name="Proposal Bouquet" data-price="1299" data-emoji="🌹">🛒 Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="occasion-card">
+      <div class="occasion-image"><img src="App_Dev_img3.jpg" alt="Celebration" loading="lazy"></div>
+      <div class="occasion-info">
+        <h3>Celebration</h3>
+        <p>Bright lilies and orchids to celebrate joy, success, and milestones.</p>
+        <div class="occasion-footer">
+          <span class="occasion-price">₹999</span>
+          <button class="add-to-cart-btn" data-name="Celebration Bouquet" data-price="999" data-emoji="🌸">🛒 Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="occasion-card">
+      <div class="occasion-image"><img src="App_Dev_img4.webp" alt="Sympathy" loading="lazy"></div>
+      <div class="occasion-info">
+        <h3>Sympathy</h3>
+        <p>White lilies and chrysanthemums offering peace and remembrance.</p>
+        <div class="occasion-footer">
+          <span class="occasion-price">₹799</span>
+          <button class="add-to-cart-btn" data-name="Sympathy Bouquet" data-price="799" data-emoji="🤍">🛒 Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="occasion-card">
+      <div class="occasion-image"><img src="App_Dev_img5.webp" alt="Gratitude" loading="lazy"></div>
+      <div class="occasion-info">
+        <h3>Gratitude</h3>
+        <p>Sunflowers and pastel blooms expressing appreciation and warmth.</p>
+        <div class="occasion-footer">
+          <span class="occasion-price">₹849</span>
+          <button class="add-to-cart-btn" data-name="Gratitude Bouquet" data-price="849" data-emoji="🌻">🛒 Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
+<!-- DELIVERY -->
 <section id="delivery" class="delivery">
-<div class="section-header">
-<h2>Worldwide Flower Delivery</h2>
-<p>Trusted global floral network</p>
-</div>
-<div class="map-wrapper">
-<div class="map-container">
-<div class="global-badge">🌍 195+ Countries</div>
-<div class="map-pin pin-us"></div>
-<div class="map-pin pin-uk"></div>
-<div class="map-pin pin-in"></div>
-<div class="map-pin pin-au"></div>
-</div>
-<div class="country-list">
-<div class="country-card"><img src="https://flagcdn.com/w40/us.png" alt="USA" loading="lazy"><span>United States</span></div>
-<div class="country-card"><img src="https://flagcdn.com/w40/gb.png" alt="UK" loading="lazy"><span>United Kingdom</span></div>
-<div class="country-card"><img src="https://flagcdn.com/w40/in.png" alt="India" loading="lazy"><span>India</span></div>
-<div class="country-card"><img src="https://flagcdn.com/w40/au.png" alt="Australia" loading="lazy"><span>Australia</span></div>
-</div>
-</div>
+  <div class="section-header">
+    <h2>Worldwide Flower Delivery</h2>
+    <p>Trusted global floral network</p>
+  </div>
+  <div class="map-wrapper">
+    <div class="map-container">
+      <div class="global-badge">🌍 195+ Countries</div>
+      <div class="map-pin pin-us"></div>
+      <div class="map-pin pin-uk"></div>
+      <div class="map-pin pin-in"></div>
+      <div class="map-pin pin-au"></div>
+    </div>
+    <div class="country-list">
+      <div class="country-card"><img src="https://flagcdn.com/w40/us.png" alt="USA"><span>United States</span></div>
+      <div class="country-card"><img src="https://flagcdn.com/w40/gb.png" alt="UK"><span>United Kingdom</span></div>
+      <div class="country-card"><img src="https://flagcdn.com/w40/in.png" alt="India"><span>India</span></div>
+      <div class="country-card"><img src="https://flagcdn.com/w40/au.png" alt="Australia"><span>Australia</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section id="contact" class="contact">
-<div class="section-header">
-<h2>Contact Our Florists</h2>
-<p>We'd love to create something beautiful for you</p>
-</div>
-
-<div class="contact-wrapper">
-<div class="contact-info">
-<h3>Get in Touch</h3>
-<p>📍 Global Floral Studios</p>
-<p>📧 support@malareey.com</p>
-<p>📞 +91 98765 43210</p>
-<p style="margin-top:2rem;font-size:0.85rem;color:#999;">Your message will be saved and sent when online if you're currently offline.</p>
-</div>
-
-<form class="contact-form" id="contact-form">
-<div class="form-status" id="form-status"></div>
-<input type="text" placeholder="Your Name" name="name" required>
-<input type="email" placeholder="Your Email" name="email" required>
-<textarea rows="4" placeholder="Your Message" name="message" required></textarea>
-<button type="submit">Send Message</button>
-</form>
-</div>
+  <div class="section-header">
+    <h2>Contact Our Florists</h2>
+    <p>We'd love to create something beautiful for you</p>
+  </div>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p>📍 Global Floral Studios</p>
+      <p>📧 support@malareey.com</p>
+      <p>📞 +91 98765 43210</p>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <div class="form-status" id="form-status"></div>
+      <input type="text" placeholder="Your Name" name="name" required>
+      <input type="email" placeholder="Your Email" name="email" required>
+      <textarea rows="4" placeholder="Your Message" name="message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Malareey. Luxury Flower Delivery Worldwide.</p>
+  <p>© 2026 Malareey. Luxury Flower Delivery Worldwide.</p>
 </footer>
 
+<!-- ============================================================
+     CART SCRIPT — inline so it always runs, no caching issues
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- state ---------- */
+  var cart = [];
+
+  /* ---------- helpers ---------- */
+  function find(name)   { return cart.find(function(i){ return i.name === name; }); }
+  function total()      { return cart.reduce(function(s,i){ return s + i.price * i.qty; }, 0); }
+  function count()      { return cart.reduce(function(s,i){ return s + i.qty; }, 0); }
+  function money(n)     { return '₹' + n.toLocaleString('en-IN'); }
+
+  /* ---------- badge ---------- */
+  function badge() {
+    var el = document.getElementById('cart-count');
+    if (!el) return;
+    el.textContent = count();
+    el.style.transform = 'scale(1.6)';
+    setTimeout(function(){ el.style.transform = ''; }, 220);
+  }
+
+  /* ---------- toast ---------- */
+  var _tt;
+  function toast(msg) {
+    var el = document.getElementById('cart-toast');
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.add('show');
+    clearTimeout(_tt);
+    _tt = setTimeout(function(){ el.classList.remove('show'); }, 2500);
+  }
+
+  /* ---------- button helpers ---------- */
+  function setAdded(btn) {
+    btn.textContent = '✅ Added to Cart';
+    btn.style.background = '#9caf88';
+  }
+  function setDefault(btn) {
+    btn.textContent = '🛒 Add to Cart';
+    btn.style.background = '';
+  }
+  function syncButtons() {
+    document.querySelectorAll('.add-to-cart-btn').forEach(function(b){
+      find(b.dataset.name) ? setAdded(b) : setDefault(b);
+    });
+  }
+
+  /* ---------- cart actions ---------- */
+  function addItem(name, price, emoji) {
+    var ex = find(name);
+    if (ex) { ex.qty++; } else { cart.push({ name:name, price:price, emoji:emoji, qty:1 }); }
+    badge(); render(); toast(emoji + ' ' + name + ' added to cart!');
+  }
+
+  /* exposed to inline onclick in rendered HTML */
+  window._cartRemove = function(name) {
+    cart = cart.filter(function(i){ return i.name !== name; });
+    badge(); render(); syncButtons();
+  };
+  window._cartQty = function(name, delta) {
+    var item = find(name);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) { window._cartRemove(name); return; }
+    badge(); render();
+  };
+
+  /* ---------- render sidebar ---------- */
+  function render() {
+    var list   = document.getElementById('cart-items-list');
+    var empty  = document.getElementById('cart-empty');
+    var footer = document.getElementById('cart-footer');
+    if (!list) return;
+
+    if (cart.length === 0) {
+      list.innerHTML = '';
+      empty.style.display  = 'block';
+      footer.style.display = 'none';
+      return;
+    }
+    empty.style.display  = 'none';
+    footer.style.display = 'block';
+
+    list.innerHTML = cart.map(function(item){
+      var n = item.name.replace(/'/g, "\\'");
+      return '<div class="cart-item">' +
+        '<div class="cart-item-img">' + item.emoji + '</div>' +
+        '<div class="cart-item-details">' +
+          '<div class="cart-item-name">'  + item.name + '</div>' +
+          '<div class="cart-item-price">' + money(item.price) + ' each</div>' +
+          '<div class="cart-item-controls">' +
+            '<button class="qty-btn" onclick="_cartQty(\'' + n + '\',-1)">−</button>' +
+            '<span class="qty-display">' + item.qty + '</span>' +
+            '<button class="qty-btn" onclick="_cartQty(\'' + n + '\',1)">+</button>' +
+            '<span style="margin-left:.5rem;font-size:.8rem;color:#888">' + money(item.price * item.qty) + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<button class="cart-item-remove" onclick="_cartRemove(\'' + n + '\')">🗑</button>' +
+      '</div>';
+    }).join('');
+
+    var t = total();
+    document.getElementById('cart-subtotal-val').textContent = money(t);
+    document.getElementById('cart-total-val').textContent    = money(t);
+  }
+
+  /* ---------- sidebar open/close ---------- */
+  function open() {
+    document.getElementById('cart-sidebar').classList.add('open');
+    document.getElementById('cart-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    document.getElementById('cart-sidebar').classList.remove('open');
+    document.getElementById('cart-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ---------- checkout ---------- */
+  function checkout() {
+    if (!cart.length) return;
+    var c = count(), t = total();
+    document.getElementById('checkout-summary-text').textContent =
+      c + ' item' + (c > 1 ? 's' : '') + ' for ' + money(t) + '. Your flowers will be delivered soon! 🌸';
+    document.getElementById('checkout-modal').classList.add('show');
+    cart = []; badge(); render(); syncButtons(); close();
+  }
+
+  /* ---------- wire up events ---------- */
+  document.getElementById('cart-toggle-btn').addEventListener('click', open);
+  document.getElementById('cart-close-btn').addEventListener('click', close);
+  document.getElementById('cart-overlay').addEventListener('click', close);
+  document.getElementById('continue-shopping-btn').addEventListener('click', close);
+  document.getElementById('checkout-btn').addEventListener('click', checkout);
+  document.getElementById('checkout-close-btn').addEventListener('click', function(){
+    document.getElementById('checkout-modal').classList.remove('show');
+  });
+  document.getElementById('checkout-modal').addEventListener('click', function(e){
+    if (e.target === this) this.classList.remove('show');
+  });
+
+  /* ---------- ADD TO CART BUTTONS ---------- */
+  document.querySelectorAll('.add-to-cart-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name  = this.dataset.name;
+      var price = parseInt(this.dataset.price, 10);
+      var emoji = this.dataset.emoji;
+
+      if (find(name)) {
+        /* already in cart → toggle OFF */
+        window._cartRemove(name);
+      } else {
+        /* not in cart → toggle ON */
+        addItem(name, price, emoji);
+        setAdded(this);
+      }
+    });
+  });
+
+  /* init */
+  badge();
+  render();
+})();
+</script>
+
+<!-- PWA / form script -->
 <script src="app.js"></script>
 </body>
 </html>
